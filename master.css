@@ -1,0 +1,146 @@
+* {
+  box-sizing: border-box;
+}
+.one {
+  background-color: #ff5722;
+  color: white;
+  margin: 30px auto;
+  text-align: center;
+  width: 150px;
+  padding: 20px;
+  position: relative;
+}
+.one::before,
+.one::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #ff5722;
+  z-index: -1;
+  left: 0;
+  top: 0;
+}
+.one::before {
+  transform: skew(10deg, 10deg);
+}
+.one::after {
+  transform: skew(-10deg, -10deg);
+}
+.two {
+  background-color: #009688;
+  color: white;
+  margin: 30px auto;
+  padding: 20px;
+  position: relative;
+  text-align: center;
+  width: 150px;
+}
+.two::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #009688;
+  z-index: -1;
+  top: 0;
+  left: -37px;
+  transform: skew(20deg);
+}
+.two::after {
+  content: "";
+  background-color: #009688;
+  width: 15%;
+  height: 100%;
+  top: 0;
+  left: -67px;
+  position: absolute;
+  z-index: -2;
+  transform: skew(20deg);
+}
+/* .class {
+  matrix(3, 0.2679, 0, 3, 20, 100);
+  scalex:3 ;
+  skewy(0.2679)
+  skewx(0)
+  scale: 3;
+  translatex(20)
+  translatey(100)
+} */
+.three {
+  background-color: #607d8b;
+  width: 200px;
+  height: 200px;
+  position: relative;
+  margin: 100px auto;
+  padding: 20px;
+  border-bottom: 5px solid black;
+  display: flex;
+  align-items: flex-end;
+}
+.three::before {
+  content: "";
+  position: absolute;
+  width: 69%;
+  height: 69%;
+  background-color: black;
+  border-bottom: 5px solid white;
+  border-right: 5px solid white;
+  transform: rotate(44deg);
+  transform-origin: 93% 41%;
+  top: -22px;
+}
+.three::after {
+  content: "Elzero";
+  color: white;
+  position: absolute;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px;
+}
+.four {
+  width: 200px;
+  height: 200px;
+  margin: 40px auto;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: 1s;
+  font-size: 30px;
+  font-weight: bold;
+}
+.four:hover {
+  transform: rotateY(-180deg);
+}
+.box {
+  perspective: 600px;
+}
+.four::before {
+  content: "front";
+  color: white;
+  font-weight: bold;
+  position: absolute;
+  background-color: #fa3664;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.four::after {
+  content: "back";
+  color: white;
+  font-weight: bold;
+  position: absolute;
+  background-color: #03a9f4;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backface-visibility: hidden;
+  transform: rotateY(-180deg);
+}
